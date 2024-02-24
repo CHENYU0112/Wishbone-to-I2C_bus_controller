@@ -32,7 +32,6 @@ clean:
 
 
 
-
 comp_I2C_MB:
 	vcom -mixedsvvh ../rtl/iicmb_int_pkg.vhd
 	vcom -mixedsvvh ../rtl/iicmb_pkg.vhd
