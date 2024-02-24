@@ -1,0 +1,450 @@
+# vsim -batch -classdebug -msgmode both -l transcript -do "set NoQuitOnFinish 1; add wave -r *; log -r *; run -all; exit" optimized_debug_top_tb 
+# Start time: 18:18:14 on Feb 20,2024
+# //  Questa Sim
+# //  Version 2021.2_2 linux Jun 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.top(fast)
+# Loading work.i2c_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.wb_if(fast__2)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+# 
+# set NoQuitOnFinish 1
+# 1
+# add wave -r *
+# log -r *
+# run -all
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# I2C_BUS WRITE Transfer: [2993105 ns]
+#  addr: 7'h22	 data: '{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [5990435 ns]
+#  addr: 7'h22	 data: '{100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [6190695 ns]
+#  addr: 7'h22	 data: '{64}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [6386045 ns]
+#  addr: 7'h22	 data: '{63}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [6581405 ns]
+#  addr: 7'h22	 data: '{65}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [6776755 ns]
+#  addr: 7'h22	 data: '{62}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [6972115 ns]
+#  addr: 7'h22	 data: '{66}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [7167465 ns]
+#  addr: 7'h22	 data: '{61}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [7362825 ns]
+#  addr: 7'h22	 data: '{67}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [7558175 ns]
+#  addr: 7'h22	 data: '{60}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [7753535 ns]
+#  addr: 7'h22	 data: '{68}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [7948885 ns]
+#  addr: 7'h22	 data: '{59}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [8144245 ns]
+#  addr: 7'h22	 data: '{69}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [8339595 ns]
+#  addr: 7'h22	 data: '{58}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [8534955 ns]
+#  addr: 7'h22	 data: '{70}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [8730305 ns]
+#  addr: 7'h22	 data: '{57}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [8925665 ns]
+#  addr: 7'h22	 data: '{71}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [9121015 ns]
+#  addr: 7'h22	 data: '{56}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [9316375 ns]
+#  addr: 7'h22	 data: '{72}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [9511725 ns]
+#  addr: 7'h22	 data: '{55}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [9707085 ns]
+#  addr: 7'h22	 data: '{73}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [9902435 ns]
+#  addr: 7'h22	 data: '{54}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [10097795 ns]
+#  addr: 7'h22	 data: '{74}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [10293145 ns]
+#  addr: 7'h22	 data: '{53}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [10488505 ns]
+#  addr: 7'h22	 data: '{75}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [10683855 ns]
+#  addr: 7'h22	 data: '{52}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [10879215 ns]
+#  addr: 7'h22	 data: '{76}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [11074565 ns]
+#  addr: 7'h22	 data: '{51}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [11269925 ns]
+#  addr: 7'h22	 data: '{77}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [11465275 ns]
+#  addr: 7'h22	 data: '{50}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [11660635 ns]
+#  addr: 7'h22	 data: '{78}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [11855985 ns]
+#  addr: 7'h22	 data: '{49}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [12051345 ns]
+#  addr: 7'h22	 data: '{79}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [12246695 ns]
+#  addr: 7'h22	 data: '{48}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [12442055 ns]
+#  addr: 7'h22	 data: '{80}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [12637405 ns]
+#  addr: 7'h22	 data: '{47}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [12832765 ns]
+#  addr: 7'h22	 data: '{81}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [13028115 ns]
+#  addr: 7'h22	 data: '{46}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [13223475 ns]
+#  addr: 7'h22	 data: '{82}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [13418825 ns]
+#  addr: 7'h22	 data: '{45}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [13614185 ns]
+#  addr: 7'h22	 data: '{83}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [13809535 ns]
+#  addr: 7'h22	 data: '{44}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [14004895 ns]
+#  addr: 7'h22	 data: '{84}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [14200245 ns]
+#  addr: 7'h22	 data: '{43}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [14395605 ns]
+#  addr: 7'h22	 data: '{85}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [14590955 ns]
+#  addr: 7'h22	 data: '{42}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [14786315 ns]
+#  addr: 7'h22	 data: '{86}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [14981665 ns]
+#  addr: 7'h22	 data: '{41}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [15177025 ns]
+#  addr: 7'h22	 data: '{87}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [15372375 ns]
+#  addr: 7'h22	 data: '{40}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [15567735 ns]
+#  addr: 7'h22	 data: '{88}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [15763085 ns]
+#  addr: 7'h22	 data: '{39}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [15958445 ns]
+#  addr: 7'h22	 data: '{89}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [16153795 ns]
+#  addr: 7'h22	 data: '{38}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [16349155 ns]
+#  addr: 7'h22	 data: '{90}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [16544505 ns]
+#  addr: 7'h22	 data: '{37}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [16739865 ns]
+#  addr: 7'h22	 data: '{91}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [16935215 ns]
+#  addr: 7'h22	 data: '{36}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [17130575 ns]
+#  addr: 7'h22	 data: '{92}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [17325925 ns]
+#  addr: 7'h22	 data: '{35}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [17521285 ns]
+#  addr: 7'h22	 data: '{93}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [17716635 ns]
+#  addr: 7'h22	 data: '{34}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [17911995 ns]
+#  addr: 7'h22	 data: '{94}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [18107345 ns]
+#  addr: 7'h22	 data: '{33}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [18302705 ns]
+#  addr: 7'h22	 data: '{95}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [18498055 ns]
+#  addr: 7'h22	 data: '{32}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [18693415 ns]
+#  addr: 7'h22	 data: '{96}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [18888765 ns]
+#  addr: 7'h22	 data: '{31}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [19084125 ns]
+#  addr: 7'h22	 data: '{97}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [19279475 ns]
+#  addr: 7'h22	 data: '{30}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [19474835 ns]
+#  addr: 7'h22	 data: '{98}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [19670185 ns]
+#  addr: 7'h22	 data: '{29}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [19865545 ns]
+#  addr: 7'h22	 data: '{99}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [20060895 ns]
+#  addr: 7'h22	 data: '{28}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [20256255 ns]
+#  addr: 7'h22	 data: '{100}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [20451605 ns]
+#  addr: 7'h22	 data: '{27}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [20646965 ns]
+#  addr: 7'h22	 data: '{101}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [20842315 ns]
+#  addr: 7'h22	 data: '{26}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [21037675 ns]
+#  addr: 7'h22	 data: '{102}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [21233025 ns]
+#  addr: 7'h22	 data: '{25}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [21428385 ns]
+#  addr: 7'h22	 data: '{103}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [21623735 ns]
+#  addr: 7'h22	 data: '{24}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [21819095 ns]
+#  addr: 7'h22	 data: '{104}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [22014445 ns]
+#  addr: 7'h22	 data: '{23}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [22209805 ns]
+#  addr: 7'h22	 data: '{105}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [22405155 ns]
+#  addr: 7'h22	 data: '{22}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [22600515 ns]
+#  addr: 7'h22	 data: '{106}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [22795865 ns]
+#  addr: 7'h22	 data: '{21}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [22991225 ns]
+#  addr: 7'h22	 data: '{107}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [23186575 ns]
+#  addr: 7'h22	 data: '{20}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [23381935 ns]
+#  addr: 7'h22	 data: '{108}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [23577285 ns]
+#  addr: 7'h22	 data: '{19}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [23772645 ns]
+#  addr: 7'h22	 data: '{109}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [23967995 ns]
+#  addr: 7'h22	 data: '{18}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [24163355 ns]
+#  addr: 7'h22	 data: '{110}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [24358705 ns]
+#  addr: 7'h22	 data: '{17}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [24554065 ns]
+#  addr: 7'h22	 data: '{111}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [24749415 ns]
+#  addr: 7'h22	 data: '{16}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [24944775 ns]
+#  addr: 7'h22	 data: '{112}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [25140125 ns]
+#  addr: 7'h22	 data: '{15}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [25335485 ns]
+#  addr: 7'h22	 data: '{113}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [25530835 ns]
+#  addr: 7'h22	 data: '{14}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [25726195 ns]
+#  addr: 7'h22	 data: '{114}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [25921545 ns]
+#  addr: 7'h22	 data: '{13}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [26116905 ns]
+#  addr: 7'h22	 data: '{115}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [26312255 ns]
+#  addr: 7'h22	 data: '{12}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [26507615 ns]
+#  addr: 7'h22	 data: '{116}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [26702965 ns]
+#  addr: 7'h22	 data: '{11}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [26898325 ns]
+#  addr: 7'h22	 data: '{117}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [27093675 ns]
+#  addr: 7'h22	 data: '{10}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [27289035 ns]
+#  addr: 7'h22	 data: '{118}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [27484385 ns]
+#  addr: 7'h22	 data: '{9}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [27679745 ns]
+#  addr: 7'h22	 data: '{119}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [27875095 ns]
+#  addr: 7'h22	 data: '{8}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [28070455 ns]
+#  addr: 7'h22	 data: '{120}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [28265805 ns]
+#  addr: 7'h22	 data: '{7}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [28461165 ns]
+#  addr: 7'h22	 data: '{121}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [28656515 ns]
+#  addr: 7'h22	 data: '{6}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [28851875 ns]
+#  addr: 7'h22	 data: '{122}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [29047225 ns]
+#  addr: 7'h22	 data: '{5}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [29242585 ns]
+#  addr: 7'h22	 data: '{123}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [29437935 ns]
+#  addr: 7'h22	 data: '{4}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [29633295 ns]
+#  addr: 7'h22	 data: '{124}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [29828645 ns]
+#  addr: 7'h22	 data: '{3}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [30024005 ns]
+#  addr: 7'h22	 data: '{125}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [30219355 ns]
+#  addr: 7'h22	 data: '{2}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [30414715 ns]
+#  addr: 7'h22	 data: '{126}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [30610065 ns]
+#  addr: 7'h22	 data: '{1}	
+# ---------------------------------------------
+# I2C_BUS WRITE Transfer: [30805425 ns]
+#  addr: 7'h22	 data: '{127}	
+# ---------------------------------------------
+# I2C_BUS READ Transfer: [30999175 ns]
+#  addr: 7'h22	 data: '{0}	
+# ---------------------------------------------
+# ** Note: $finish    : ../testbench/top.sv(424)
+#    Time: 31000205 ns  Iteration: 0  Instance: /top
+# 1
+# Break in NamedBeginStat wb_driver at ../testbench/top.sv line 424
+# exit
+# End time: 18:18:27 on Feb 20,2024, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 0

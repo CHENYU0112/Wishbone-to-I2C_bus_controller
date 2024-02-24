@@ -1,0 +1,473 @@
+# //  Questa Sim
+# //  Version 2022.2_1 linux May 19 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -i -classdebug -msgmode both -l transcript -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb 
+# Start time: 20:39:31 on Mar 26,2023
+# Loading sv_std.std
+# Loading work.i2c_if(fast)
+# Loading work.wb_if(fast)
+# Loading work.ncsu_pkg(fast)
+# Loading work.i2c_pkg(fast)
+# Loading work.wb_pkg(fast)
+# Loading work.i2cmb_env_pkg(fast)
+# Loading work.top(fast)
+# Loading work.i2c_if(fast__2)
+# Loading work.wb_if(fast__2)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+# set NoQuitOnFinish 1
+# 1
+#  do wave.do
+run -all
+# ----------------------------------------------------------------
+# //  NCSU Package 
+# //  Version 1.0a
+# ----------------------------------------------------------------
+# 
+# 
+# NCSU_INFO:Time   0 ns:i2cmb_test::new(): found +GEN_TYPE=i2cmb_generator
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.wb_agent.wb_driver_0 called
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.wb_agent.wb_monitor_0 called
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.wb_coverage called
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.i2c_agent.i2c_drv0 called
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.i2c_agent.i2c_mon0 called
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.i2c_coverage called
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.predictor called
+# NCSU_INFO:Time   0 ns:ncsu_component::build():  of test0.env.scoreboard called
+# ----------------------------------------------------------------
+#  Write 32 incrementing values                                   
+#  -> From 0 to 31, to the i2c_bus                                
+# ----------------------------------------------------------------
+# NCSU_INFO:Time 2984655 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 69 
+# NCSU_INFO:Time 2993075 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 68 
+# NCSU_INFO:Time 2993075 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}, expected_trans= '{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}
+# ----------------------------------------------------------------
+#  Read 32 values from the i2c_bus                                
+#  -> Return incrementing data from 100 to 131                    
+# ----------------------------------------------------------------
+# NCSU_INFO:Time 5981985 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 71 
+# NCSU_INFO:Time 5990405 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 70 
+# NCSU_INFO:Time 5990405 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131}, expected_trans= '{100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131}
+# ----------------------------------------------------------------
+#  Alternate writes and reads for 64 transfers                    
+#  -> Increment write data from 64 to 127  (total 64 counts)      
+#  -> Decrement read data from 63 to 0     (total 64 counts)      
+# ----------------------------------------------------------------
+# NCSU_INFO:Time 6180645 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 73 
+# NCSU_INFO:Time 6190665 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 72 
+# NCSU_INFO:Time 6190665 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{64}, expected_trans= '{64}
+# NCSU_INFO:Time 6375995 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 75 
+# NCSU_INFO:Time 6386015 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 74 
+# NCSU_INFO:Time 6386015 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{63}, expected_trans= '{63}
+# NCSU_INFO:Time 6571355 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 77 
+# NCSU_INFO:Time 6581375 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 76 
+# NCSU_INFO:Time 6581375 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{65}, expected_trans= '{65}
+# NCSU_INFO:Time 6766705 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 79 
+# NCSU_INFO:Time 6776725 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 78 
+# NCSU_INFO:Time 6776725 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{62}, expected_trans= '{62}
+# NCSU_INFO:Time 6962065 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 81 
+# NCSU_INFO:Time 6972085 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 80 
+# NCSU_INFO:Time 6972085 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{66}, expected_trans= '{66}
+# NCSU_INFO:Time 7157415 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 83 
+# NCSU_INFO:Time 7167435 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 82 
+# NCSU_INFO:Time 7167435 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{61}, expected_trans= '{61}
+# NCSU_INFO:Time 7352775 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 85 
+# NCSU_INFO:Time 7362795 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 84 
+# NCSU_INFO:Time 7362795 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{67}, expected_trans= '{67}
+# NCSU_INFO:Time 7548125 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 87 
+# NCSU_INFO:Time 7558145 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 86 
+# NCSU_INFO:Time 7558145 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{60}, expected_trans= '{60}
+# NCSU_INFO:Time 7743485 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 89 
+# NCSU_INFO:Time 7753505 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 88 
+# NCSU_INFO:Time 7753505 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{68}, expected_trans= '{68}
+# NCSU_INFO:Time 7938835 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 91 
+# NCSU_INFO:Time 7948855 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 90 
+# NCSU_INFO:Time 7948855 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{59}, expected_trans= '{59}
+# NCSU_INFO:Time 8134195 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 93 
+# NCSU_INFO:Time 8144215 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 92 
+# NCSU_INFO:Time 8144215 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{69}, expected_trans= '{69}
+# NCSU_INFO:Time 8329545 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 95 
+# NCSU_INFO:Time 8339565 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 94 
+# NCSU_INFO:Time 8339565 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{58}, expected_trans= '{58}
+# NCSU_INFO:Time 8524905 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 97 
+# NCSU_INFO:Time 8534925 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 96 
+# NCSU_INFO:Time 8534925 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{70}, expected_trans= '{70}
+# NCSU_INFO:Time 8720255 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 99 
+# NCSU_INFO:Time 8730275 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 98 
+# NCSU_INFO:Time 8730275 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{57}, expected_trans= '{57}
+# NCSU_INFO:Time 8915615 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 101 
+# NCSU_INFO:Time 8925635 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 100 
+# NCSU_INFO:Time 8925635 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{71}, expected_trans= '{71}
+# NCSU_INFO:Time 9110965 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 103 
+# NCSU_INFO:Time 9120985 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 102 
+# NCSU_INFO:Time 9120985 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{56}, expected_trans= '{56}
+# NCSU_INFO:Time 9306325 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 105 
+# NCSU_INFO:Time 9316345 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 104 
+# NCSU_INFO:Time 9316345 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{72}, expected_trans= '{72}
+# NCSU_INFO:Time 9501675 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 107 
+# NCSU_INFO:Time 9511695 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 106 
+# NCSU_INFO:Time 9511695 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{55}, expected_trans= '{55}
+# NCSU_INFO:Time 9697035 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 109 
+# NCSU_INFO:Time 9707055 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 108 
+# NCSU_INFO:Time 9707055 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{73}, expected_trans= '{73}
+# NCSU_INFO:Time 9892385 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 111 
+# NCSU_INFO:Time 9902405 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 110 
+# NCSU_INFO:Time 9902405 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{54}, expected_trans= '{54}
+# NCSU_INFO:Time 10087745 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 113 
+# NCSU_INFO:Time 10097765 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 112 
+# NCSU_INFO:Time 10097765 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{74}, expected_trans= '{74}
+# NCSU_INFO:Time 10283095 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 115 
+# NCSU_INFO:Time 10293115 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 114 
+# NCSU_INFO:Time 10293115 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{53}, expected_trans= '{53}
+# NCSU_INFO:Time 10478455 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 117 
+# NCSU_INFO:Time 10488475 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 116 
+# NCSU_INFO:Time 10488475 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{75}, expected_trans= '{75}
+# NCSU_INFO:Time 10673805 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 119 
+# NCSU_INFO:Time 10683825 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 118 
+# NCSU_INFO:Time 10683825 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{52}, expected_trans= '{52}
+# NCSU_INFO:Time 10869165 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 121 
+# NCSU_INFO:Time 10879185 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 120 
+# NCSU_INFO:Time 10879185 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{76}, expected_trans= '{76}
+# NCSU_INFO:Time 11064515 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 123 
+# NCSU_INFO:Time 11074535 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 122 
+# NCSU_INFO:Time 11074535 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{51}, expected_trans= '{51}
+# NCSU_INFO:Time 11259875 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 125 
+# NCSU_INFO:Time 11269895 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 124 
+# NCSU_INFO:Time 11269895 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{77}, expected_trans= '{77}
+# NCSU_INFO:Time 11455225 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 127 
+# NCSU_INFO:Time 11465245 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 126 
+# NCSU_INFO:Time 11465245 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{50}, expected_trans= '{50}
+# NCSU_INFO:Time 11650585 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 129 
+# NCSU_INFO:Time 11660605 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 128 
+# NCSU_INFO:Time 11660605 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{78}, expected_trans= '{78}
+# NCSU_INFO:Time 11845935 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 131 
+# NCSU_INFO:Time 11855955 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 130 
+# NCSU_INFO:Time 11855955 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{49}, expected_trans= '{49}
+# NCSU_INFO:Time 12041295 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 133 
+# NCSU_INFO:Time 12051315 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 132 
+# NCSU_INFO:Time 12051315 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{79}, expected_trans= '{79}
+# NCSU_INFO:Time 12236645 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 135 
+# NCSU_INFO:Time 12246665 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 134 
+# NCSU_INFO:Time 12246665 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{48}, expected_trans= '{48}
+# NCSU_INFO:Time 12432005 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 137 
+# NCSU_INFO:Time 12442025 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 136 
+# NCSU_INFO:Time 12442025 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{80}, expected_trans= '{80}
+# NCSU_INFO:Time 12627355 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 139 
+# NCSU_INFO:Time 12637375 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 138 
+# NCSU_INFO:Time 12637375 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{47}, expected_trans= '{47}
+# NCSU_INFO:Time 12822715 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 141 
+# NCSU_INFO:Time 12832735 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 140 
+# NCSU_INFO:Time 12832735 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{81}, expected_trans= '{81}
+# NCSU_INFO:Time 13018065 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 143 
+# NCSU_INFO:Time 13028085 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 142 
+# NCSU_INFO:Time 13028085 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{46}, expected_trans= '{46}
+# NCSU_INFO:Time 13213425 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 145 
+# NCSU_INFO:Time 13223445 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 144 
+# NCSU_INFO:Time 13223445 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{82}, expected_trans= '{82}
+# NCSU_INFO:Time 13408775 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 147 
+# NCSU_INFO:Time 13418795 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 146 
+# NCSU_INFO:Time 13418795 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{45}, expected_trans= '{45}
+# NCSU_INFO:Time 13604135 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 149 
+# NCSU_INFO:Time 13614155 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 148 
+# NCSU_INFO:Time 13614155 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{83}, expected_trans= '{83}
+# NCSU_INFO:Time 13799485 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 151 
+# NCSU_INFO:Time 13809505 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 150 
+# NCSU_INFO:Time 13809505 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{44}, expected_trans= '{44}
+# NCSU_INFO:Time 13994845 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 153 
+# NCSU_INFO:Time 14004865 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 152 
+# NCSU_INFO:Time 14004865 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{84}, expected_trans= '{84}
+# NCSU_INFO:Time 14190195 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 155 
+# NCSU_INFO:Time 14200215 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 154 
+# NCSU_INFO:Time 14200215 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{43}, expected_trans= '{43}
+# NCSU_INFO:Time 14385555 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 157 
+# NCSU_INFO:Time 14395575 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 156 
+# NCSU_INFO:Time 14395575 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{85}, expected_trans= '{85}
+# NCSU_INFO:Time 14580905 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 159 
+# NCSU_INFO:Time 14590925 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 158 
+# NCSU_INFO:Time 14590925 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{42}, expected_trans= '{42}
+# NCSU_INFO:Time 14776265 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 161 
+# NCSU_INFO:Time 14786285 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 160 
+# NCSU_INFO:Time 14786285 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{86}, expected_trans= '{86}
+# NCSU_INFO:Time 14971615 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 163 
+# NCSU_INFO:Time 14981635 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 162 
+# NCSU_INFO:Time 14981635 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{41}, expected_trans= '{41}
+# NCSU_INFO:Time 15166975 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 165 
+# NCSU_INFO:Time 15176995 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 164 
+# NCSU_INFO:Time 15176995 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{87}, expected_trans= '{87}
+# NCSU_INFO:Time 15362325 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 167 
+# NCSU_INFO:Time 15372345 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 166 
+# NCSU_INFO:Time 15372345 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{40}, expected_trans= '{40}
+# NCSU_INFO:Time 15557685 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 169 
+# NCSU_INFO:Time 15567705 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 168 
+# NCSU_INFO:Time 15567705 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{88}, expected_trans= '{88}
+# NCSU_INFO:Time 15753035 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 171 
+# NCSU_INFO:Time 15763055 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 170 
+# NCSU_INFO:Time 15763055 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{39}, expected_trans= '{39}
+# NCSU_INFO:Time 15948395 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 173 
+# NCSU_INFO:Time 15958415 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 172 
+# NCSU_INFO:Time 15958415 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{89}, expected_trans= '{89}
+# NCSU_INFO:Time 16143745 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 175 
+# NCSU_INFO:Time 16153765 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 174 
+# NCSU_INFO:Time 16153765 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{38}, expected_trans= '{38}
+# NCSU_INFO:Time 16339105 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 177 
+# NCSU_INFO:Time 16349125 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 176 
+# NCSU_INFO:Time 16349125 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{90}, expected_trans= '{90}
+# NCSU_INFO:Time 16534455 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 179 
+# NCSU_INFO:Time 16544475 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 178 
+# NCSU_INFO:Time 16544475 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{37}, expected_trans= '{37}
+# NCSU_INFO:Time 16729815 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 181 
+# NCSU_INFO:Time 16739835 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 180 
+# NCSU_INFO:Time 16739835 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{91}, expected_trans= '{91}
+# NCSU_INFO:Time 16925165 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 183 
+# NCSU_INFO:Time 16935185 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 182 
+# NCSU_INFO:Time 16935185 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{36}, expected_trans= '{36}
+# NCSU_INFO:Time 17120525 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 185 
+# NCSU_INFO:Time 17130545 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 184 
+# NCSU_INFO:Time 17130545 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{92}, expected_trans= '{92}
+# NCSU_INFO:Time 17315875 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 187 
+# NCSU_INFO:Time 17325895 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 186 
+# NCSU_INFO:Time 17325895 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{35}, expected_trans= '{35}
+# NCSU_INFO:Time 17511235 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 189 
+# NCSU_INFO:Time 17521255 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 188 
+# NCSU_INFO:Time 17521255 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{93}, expected_trans= '{93}
+# NCSU_INFO:Time 17706585 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 191 
+# NCSU_INFO:Time 17716605 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 190 
+# NCSU_INFO:Time 17716605 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{34}, expected_trans= '{34}
+# NCSU_INFO:Time 17901945 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 193 
+# NCSU_INFO:Time 17911965 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 192 
+# NCSU_INFO:Time 17911965 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{94}, expected_trans= '{94}
+# NCSU_INFO:Time 18097295 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 195 
+# NCSU_INFO:Time 18107315 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 194 
+# NCSU_INFO:Time 18107315 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{33}, expected_trans= '{33}
+# NCSU_INFO:Time 18292655 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 197 
+# NCSU_INFO:Time 18302675 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 196 
+# NCSU_INFO:Time 18302675 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{95}, expected_trans= '{95}
+# NCSU_INFO:Time 18488005 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 199 
+# NCSU_INFO:Time 18498025 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 198 
+# NCSU_INFO:Time 18498025 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{32}, expected_trans= '{32}
+# NCSU_INFO:Time 18683365 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 201 
+# NCSU_INFO:Time 18693385 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 200 
+# NCSU_INFO:Time 18693385 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{96}, expected_trans= '{96}
+# NCSU_INFO:Time 18878715 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 203 
+# NCSU_INFO:Time 18888735 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 202 
+# NCSU_INFO:Time 18888735 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{31}, expected_trans= '{31}
+# NCSU_INFO:Time 19074075 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 205 
+# NCSU_INFO:Time 19084095 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 204 
+# NCSU_INFO:Time 19084095 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{97}, expected_trans= '{97}
+# NCSU_INFO:Time 19269425 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 207 
+# NCSU_INFO:Time 19279445 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 206 
+# NCSU_INFO:Time 19279445 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{30}, expected_trans= '{30}
+# NCSU_INFO:Time 19464785 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 209 
+# NCSU_INFO:Time 19474805 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 208 
+# NCSU_INFO:Time 19474805 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{98}, expected_trans= '{98}
+# NCSU_INFO:Time 19660135 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 211 
+# NCSU_INFO:Time 19670155 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 210 
+# NCSU_INFO:Time 19670155 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{29}, expected_trans= '{29}
+# NCSU_INFO:Time 19855495 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 213 
+# NCSU_INFO:Time 19865515 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 212 
+# NCSU_INFO:Time 19865515 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{99}, expected_trans= '{99}
+# NCSU_INFO:Time 20050845 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 215 
+# NCSU_INFO:Time 20060865 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 214 
+# NCSU_INFO:Time 20060865 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{28}, expected_trans= '{28}
+# NCSU_INFO:Time 20246205 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 217 
+# NCSU_INFO:Time 20256225 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 216 
+# NCSU_INFO:Time 20256225 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{100}, expected_trans= '{100}
+# NCSU_INFO:Time 20441555 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 219 
+# NCSU_INFO:Time 20451575 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 218 
+# NCSU_INFO:Time 20451575 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{27}, expected_trans= '{27}
+# NCSU_INFO:Time 20636915 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 221 
+# NCSU_INFO:Time 20646935 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 220 
+# NCSU_INFO:Time 20646935 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{101}, expected_trans= '{101}
+# NCSU_INFO:Time 20832265 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 223 
+# NCSU_INFO:Time 20842285 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 222 
+# NCSU_INFO:Time 20842285 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{26}, expected_trans= '{26}
+# NCSU_INFO:Time 21027625 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 225 
+# NCSU_INFO:Time 21037645 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 224 
+# NCSU_INFO:Time 21037645 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{102}, expected_trans= '{102}
+# NCSU_INFO:Time 21222975 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 227 
+# NCSU_INFO:Time 21232995 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 226 
+# NCSU_INFO:Time 21232995 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{25}, expected_trans= '{25}
+# NCSU_INFO:Time 21418335 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 229 
+# NCSU_INFO:Time 21428355 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 228 
+# NCSU_INFO:Time 21428355 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{103}, expected_trans= '{103}
+# NCSU_INFO:Time 21613685 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 231 
+# NCSU_INFO:Time 21623705 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 230 
+# NCSU_INFO:Time 21623705 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{24}, expected_trans= '{24}
+# NCSU_INFO:Time 21809045 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 233 
+# NCSU_INFO:Time 21819065 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 232 
+# NCSU_INFO:Time 21819065 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{104}, expected_trans= '{104}
+# NCSU_INFO:Time 22004395 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 235 
+# NCSU_INFO:Time 22014415 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 234 
+# NCSU_INFO:Time 22014415 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{23}, expected_trans= '{23}
+# NCSU_INFO:Time 22199755 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 237 
+# NCSU_INFO:Time 22209775 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 236 
+# NCSU_INFO:Time 22209775 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{105}, expected_trans= '{105}
+# NCSU_INFO:Time 22395105 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 239 
+# NCSU_INFO:Time 22405125 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 238 
+# NCSU_INFO:Time 22405125 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{22}, expected_trans= '{22}
+# NCSU_INFO:Time 22590465 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 241 
+# NCSU_INFO:Time 22600485 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 240 
+# NCSU_INFO:Time 22600485 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{106}, expected_trans= '{106}
+# NCSU_INFO:Time 22785815 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 243 
+# NCSU_INFO:Time 22795835 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 242 
+# NCSU_INFO:Time 22795835 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{21}, expected_trans= '{21}
+# NCSU_INFO:Time 22981175 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 245 
+# NCSU_INFO:Time 22991195 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 244 
+# NCSU_INFO:Time 22991195 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{107}, expected_trans= '{107}
+# NCSU_INFO:Time 23176525 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 247 
+# NCSU_INFO:Time 23186545 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 246 
+# NCSU_INFO:Time 23186545 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{20}, expected_trans= '{20}
+# NCSU_INFO:Time 23371885 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 249 
+# NCSU_INFO:Time 23381905 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 248 
+# NCSU_INFO:Time 23381905 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{108}, expected_trans= '{108}
+# NCSU_INFO:Time 23567235 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 251 
+# NCSU_INFO:Time 23577255 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 250 
+# NCSU_INFO:Time 23577255 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{19}, expected_trans= '{19}
+# NCSU_INFO:Time 23762595 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 253 
+# NCSU_INFO:Time 23772615 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 252 
+# NCSU_INFO:Time 23772615 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{109}, expected_trans= '{109}
+# NCSU_INFO:Time 23957945 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 255 
+# NCSU_INFO:Time 23967965 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 254 
+# NCSU_INFO:Time 23967965 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{18}, expected_trans= '{18}
+# NCSU_INFO:Time 24153305 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 257 
+# NCSU_INFO:Time 24163325 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 256 
+# NCSU_INFO:Time 24163325 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{110}, expected_trans= '{110}
+# NCSU_INFO:Time 24348655 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 259 
+# NCSU_INFO:Time 24358675 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 258 
+# NCSU_INFO:Time 24358675 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{17}, expected_trans= '{17}
+# NCSU_INFO:Time 24544015 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 261 
+# NCSU_INFO:Time 24554035 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 260 
+# NCSU_INFO:Time 24554035 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{111}, expected_trans= '{111}
+# NCSU_INFO:Time 24739365 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 263 
+# NCSU_INFO:Time 24749385 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 262 
+# NCSU_INFO:Time 24749385 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{16}, expected_trans= '{16}
+# NCSU_INFO:Time 24934725 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 265 
+# NCSU_INFO:Time 24944745 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 264 
+# NCSU_INFO:Time 24944745 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{112}, expected_trans= '{112}
+# NCSU_INFO:Time 25130075 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 267 
+# NCSU_INFO:Time 25140095 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 266 
+# NCSU_INFO:Time 25140095 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{15}, expected_trans= '{15}
+# NCSU_INFO:Time 25325435 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 269 
+# NCSU_INFO:Time 25335455 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 268 
+# NCSU_INFO:Time 25335455 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{113}, expected_trans= '{113}
+# NCSU_INFO:Time 25520785 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 271 
+# NCSU_INFO:Time 25530805 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 270 
+# NCSU_INFO:Time 25530805 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{14}, expected_trans= '{14}
+# NCSU_INFO:Time 25716145 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 273 
+# NCSU_INFO:Time 25726165 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 272 
+# NCSU_INFO:Time 25726165 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{114}, expected_trans= '{114}
+# NCSU_INFO:Time 25911495 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 275 
+# NCSU_INFO:Time 25921515 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 274 
+# NCSU_INFO:Time 25921515 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{13}, expected_trans= '{13}
+# NCSU_INFO:Time 26106855 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 277 
+# NCSU_INFO:Time 26116875 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 276 
+# NCSU_INFO:Time 26116875 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{115}, expected_trans= '{115}
+# NCSU_INFO:Time 26302205 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 279 
+# NCSU_INFO:Time 26312225 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 278 
+# NCSU_INFO:Time 26312225 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{12}, expected_trans= '{12}
+# NCSU_INFO:Time 26497565 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 281 
+# NCSU_INFO:Time 26507585 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 280 
+# NCSU_INFO:Time 26507585 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{116}, expected_trans= '{116}
+# NCSU_INFO:Time 26692915 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 283 
+# NCSU_INFO:Time 26702935 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 282 
+# NCSU_INFO:Time 26702935 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{11}, expected_trans= '{11}
+# NCSU_INFO:Time 26888275 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 285 
+# NCSU_INFO:Time 26898295 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 284 
+# NCSU_INFO:Time 26898295 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{117}, expected_trans= '{117}
+# NCSU_INFO:Time 27083625 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 287 
+# NCSU_INFO:Time 27093645 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 286 
+# NCSU_INFO:Time 27093645 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{10}, expected_trans= '{10}
+# NCSU_INFO:Time 27278985 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 289 
+# NCSU_INFO:Time 27289005 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 288 
+# NCSU_INFO:Time 27289005 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{118}, expected_trans= '{118}
+# NCSU_INFO:Time 27474335 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 291 
+# NCSU_INFO:Time 27484355 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 290 
+# NCSU_INFO:Time 27484355 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{9}, expected_trans= '{9}
+# NCSU_INFO:Time 27669695 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 293 
+# NCSU_INFO:Time 27679715 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 292 
+# NCSU_INFO:Time 27679715 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{119}, expected_trans= '{119}
+# NCSU_INFO:Time 27865045 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 295 
+# NCSU_INFO:Time 27875065 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 294 
+# NCSU_INFO:Time 27875065 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{8}, expected_trans= '{8}
+# NCSU_INFO:Time 28060405 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 297 
+# NCSU_INFO:Time 28070425 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 296 
+# NCSU_INFO:Time 28070425 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{120}, expected_trans= '{120}
+# NCSU_INFO:Time 28255755 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 299 
+# NCSU_INFO:Time 28265775 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 298 
+# NCSU_INFO:Time 28265775 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{7}, expected_trans= '{7}
+# NCSU_INFO:Time 28451115 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 301 
+# NCSU_INFO:Time 28461135 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 300 
+# NCSU_INFO:Time 28461135 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{121}, expected_trans= '{121}
+# NCSU_INFO:Time 28646465 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 303 
+# NCSU_INFO:Time 28656485 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 302 
+# NCSU_INFO:Time 28656485 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{6}, expected_trans= '{6}
+# NCSU_INFO:Time 28841825 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 305 
+# NCSU_INFO:Time 28851845 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 304 
+# NCSU_INFO:Time 28851845 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{122}, expected_trans= '{122}
+# NCSU_INFO:Time 29037175 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 307 
+# NCSU_INFO:Time 29047195 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 306 
+# NCSU_INFO:Time 29047195 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{5}, expected_trans= '{5}
+# NCSU_INFO:Time 29232535 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 309 
+# NCSU_INFO:Time 29242555 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 308 
+# NCSU_INFO:Time 29242555 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{123}, expected_trans= '{123}
+# NCSU_INFO:Time 29427885 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 311 
+# NCSU_INFO:Time 29437905 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 310 
+# NCSU_INFO:Time 29437905 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{4}, expected_trans= '{4}
+# NCSU_INFO:Time 29623245 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 313 
+# NCSU_INFO:Time 29633265 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 312 
+# NCSU_INFO:Time 29633265 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{124}, expected_trans= '{124}
+# NCSU_INFO:Time 29818595 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 315 
+# NCSU_INFO:Time 29828615 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 314 
+# NCSU_INFO:Time 29828615 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{3}, expected_trans= '{3}
+# NCSU_INFO:Time 30013955 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 317 
+# NCSU_INFO:Time 30023975 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 316 
+# NCSU_INFO:Time 30023975 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{125}, expected_trans= '{125}
+# NCSU_INFO:Time 30209305 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 319 
+# NCSU_INFO:Time 30219325 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 318 
+# NCSU_INFO:Time 30219325 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{2}, expected_trans= '{2}
+# NCSU_INFO:Time 30404665 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 321 
+# NCSU_INFO:Time 30414685 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 320 
+# NCSU_INFO:Time 30414685 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{126}, expected_trans= '{126}
+# NCSU_INFO:Time 30600015 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 323 
+# NCSU_INFO:Time 30610035 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 322 
+# NCSU_INFO:Time 30610035 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{1}, expected_trans= '{1}
+# NCSU_INFO:Time 30795375 ns:scoreboard::nb_transport(): expected transaction name: i2c_transaction, transaction_count: 325 
+# NCSU_INFO:Time 30805395 ns:scoreboard::nb_put(): actual transaction name: i2c_transaction, transaction_count: 324 
+# NCSU_INFO:Time 30805395 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{127}, expected_trans= '{127}
+# NCSU_INFO:Time 30990725 ns:scoreboard::nb_transport(): actual transaction name: i2c_transaction, transaction_count: 327 
+# NCSU_INFO:Time 30999145 ns:scoreboard::nb_put(): expected transaction name: i2c_transaction, transaction_count: 326 
+# NCSU_INFO:Time 30999145 ns:scoreboard::run(): transaction comparison MATCH! actual trans= '{0}, expected_trans= '{0}
+# ----------------------------------------------------------------
+#  Project 2 Finish                                               
+# ----------------------------------------------------------------
+# ** Note: $finish    : ../testbench/top.sv(156)
+#    Time: 31000175 ns  Iteration: 0  Instance: /top
+# 1
+# Break in NamedBeginStat test_flow at ../testbench/top.sv line 156
+# End time: 20:40:31 on Mar 26,2023, Elapsed time: 0:01:00
+# Errors: 0, Warnings: 0
