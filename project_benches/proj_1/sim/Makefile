@@ -30,7 +30,6 @@ GUI_DO_COMMANDS = -do " \
 clean:
 	rm -rf work *.wlf transcript i2cmb_test_plan*.ucdb *.vstf *.ucdb
 
-
 comp_I2C_MB:
 	vcom -mixedsvvh ../rtl/iicmb_int_pkg.vhd
 	vcom -mixedsvvh ../rtl/iicmb_pkg.vhd
