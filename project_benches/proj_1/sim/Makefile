@@ -23,6 +23,8 @@ BATCH_DO_COMMANDS = -do " \
 			run -all; \
 			exit; "
 
+
+
 GUI_DO_COMMANDS = -do " \
 			set NoQuitOnFinish 1; \
 			do wave.do; "
