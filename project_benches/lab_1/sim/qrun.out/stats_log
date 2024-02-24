@@ -1,0 +1,6 @@
+vlog: Errors: 0, Warnings: 0
+vcom: Errors: 0, Warnings: 0
+vopt: Errors: 0, Warnings: 2
+vopt: Errors: 0, Warnings: 2
+qrun: Errors: 0, Warnings: 0
+vsim: Errors: 2, Warnings: 2

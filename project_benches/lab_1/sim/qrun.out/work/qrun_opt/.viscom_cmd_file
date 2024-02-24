@@ -1,0 +1,1 @@
+/mnt/apps/public/COE/mg_apps/questa2021.2/linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 16121856 -msglimit error -msglimitcount 20 +designfile+design.bin top -work qrun.out/work -debug,livesim -statslog qrun.out/stats_log -o qrun_opt

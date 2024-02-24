@@ -1,0 +1,104 @@
+# //  Questa Sim
+# //  Version 2021.2_2 linux Jun 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -i -classdebug -msgmode both -do "set NoQuitOnFinish 1; do wave.do" optimized_debug_top_tb 
+# Start time: 13:45:27 on Feb 11,2024
+# Loading sv_std.std
+# Loading work.top(fast)
+# Loading work.wb_if(fast__1)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.iicmb_m_wb(str)#1
+# Loading work.wishbone(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.iicmb_pkg(body)
+# Loading work.regblock(rtl)#1
+# Loading work.iicmb_int_pkg(body)
+# Loading work.iicmb_m(str)#1
+# Loading work.mbyte(rtl)#1
+# Loading work.mbit(rtl)#1
+# Loading work.conditioner_mux(str)#1
+# Loading work.conditioner(str)#1
+# Loading work.filter(rtl)#1
+# Loading work.bus_state(rtl)#1
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$fsdbDumpfile' is not defined.
+#    Time: 0 ps  Iteration: 0  Region: /top/dumpfsdb File: ../testbench/top.sv Line: 178
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$fsdbDumpvars' is not defined.
+#    Time: 0 ps  Iteration: 0  Region: /top/dumpfsdb File: ../testbench/top.sv Line: 179
+# set NoQuitOnFinish 1
+# 1
+#  do wave.do
+# ** Error: unknown or ambiguous subcommand "tags": must be activecursor, addcursor, clipboard, collapse, configcursor, create, cursor, cursorconfig, cursortime, deletecursor, edit, editwrite, expand, export, exportvcd, group, guiObjGetUPFInfo, guiObjHasUPFInfo, import, interrupt, map, modify, overlay, pah, positioncursor, refresh, seecursor, seetime, sort, ungroup, write, zoom, zoomcursor, zoomfull, zoomin, zoomlast, zoomout, or zoomrange
+# Executing ONERROR command at macro ./wave.do line 2
+# ** Error: unknown or ambiguous subcommand "update": must be activecursor, addcursor, clipboard, collapse, configcursor, create, cursor, cursorconfig, cursortime, deletecursor, edit, editwrite, expand, export, exportvcd, group, guiObjGetUPFInfo, guiObjHasUPFInfo, import, interrupt, map, modify, overlay, pah, positioncursor, refresh, seecursor, seetime, sort, ungroup, write, zoom, zoomcursor, zoomfull, zoomin, zoomlast, zoomout, or zoomrange
+# Executing ONERROR command at macro ./wave.do line 3
+# 0 ps
+# 10 ns
+# ** Error: No help for wave group available.
+# Executing ONERROR command at macro ./wave.do line 5
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 6
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 7
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 8
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 9
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 10
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 11
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 12
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 13
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 14
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 15
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 16
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 17
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 18
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 19
+# ** Error: No help for wave addcursor available.
+# Executing ONERROR command at macro ./wave.do line 20
+# ** Error: unknown or ambiguous subcommand "index": must be activecursor, addcursor, clipboard, collapse, configcursor, create, cursor, cursorconfig, cursortime, deletecursor, edit, editwrite, expand, export, exportvcd, group, guiObjGetUPFInfo, guiObjHasUPFInfo, import, interrupt, map, modify, overlay, pah, positioncursor, refresh, seecursor, seetime, sort, ungroup, write, zoom, zoomcursor, zoomfull, zoomin, zoomlast, zoomout, or zoomrange
+# Executing ONERROR command at macro ./wave.do line 21
+# ** Error: unknown or ambiguous subcommand "update": must be activecursor, addcursor, clipboard, collapse, configcursor, create, cursor, cursorconfig, cursortime, deletecursor, edit, editwrite, expand, export, exportvcd, group, guiObjGetUPFInfo, guiObjHasUPFInfo, import, interrupt, map, modify, overlay, pah, positioncursor, refresh, seecursor, seetime, sort, ungroup, write, zoom, zoomcursor, zoomfull, zoomin, zoomlast, zoomout, or zoomrange
+# Executing ONERROR command at macro ./wave.do line 22
+# ** Error: unknown or ambiguous subcommand "top": must be activecursor, addcursor, clipboard, collapse, configcursor, create, cursor, cursorconfig, cursortime, deletecursor, edit, editwrite, expand, export, exportvcd, group, guiObjGetUPFInfo, guiObjHasUPFInfo, import, interrupt, map, modify, overlay, pah, positioncursor, refresh, seecursor, seetime, sort, ungroup, write, zoom, zoomcursor, zoomfull, zoomin, zoomlast, zoomout, or zoomrange
+# Executing ONERROR command at macro ./wave.do line 23
+add wave -position insertpoint sim:/top/DUT/*
+run -all
+# ============== transaction at 0.00 ns ns ==============
+# addr: 0
+# data: 00
+# we:   0
+# ======================================================
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$fsdbDumpfile'
+#    Time: 0 ps  Iteration: 0  Process: /top/#INITIAL#175(dumpfsdb) File: ../testbench/top.sv Line: 178
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$fsdbDumpvars'
+#    Time: 0 ps  Iteration: 0  Process: /top/#INITIAL#175(dumpfsdb) File: ../testbench/top.sv Line: 179
+# run out of time
+# ** Note: $finish    : ../testbench/top.sv(114)
+#    Time: 200 us  Iteration: 0  Instance: /top
+# 1
+# Break in NamedBeginStat end_flow at ../testbench/top.sv line 114
+# End time: 10:46:25 on Feb 12,2024, Elapsed time: 21:00:58
+# Errors: 23, Warnings: 2
